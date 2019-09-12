@@ -1,0 +1,26 @@
+{
+  "name": "vietnamese-sentences",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nxhuy/vietnamese-sentences.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nxhuy/vietnamese-sentences/issues"
+  },
+  "homepage": "https://github.com/nxhuy/vietnamese-sentences#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "lodash": "^4.17.15",
+    "vntk": "^1.4.2"
+  }
+}
