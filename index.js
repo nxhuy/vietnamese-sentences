@@ -54,12 +54,13 @@ const crawlArticle = articleUrl =>
 generateTokenForWord('hàng')
 function generateToken(sentence){
   const last4Words = sentence.split(" ").slice(-4);
-  console.log('last4Words :', last4Words);
+  const results = last4Words.map(generateTokenForWord)
+  console.log('results :', results);
 }
 
 
 function generateTokenForWord(word){
-  
+  return word
 }
 
 function saveData(data) {
