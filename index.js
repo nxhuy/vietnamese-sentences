@@ -19,10 +19,12 @@ const notContainNumberAtLast = item =>
   !/\d/.test(
     item
       .split(" ")
-      .slice(-3)
+      .slice(-4)
       .join()
   );
 const trimIt = item => item.trim();
+const toLowerCase = item => item.toLowerCase()
+const greaterThan4Words = sentence => sentence.split(" ").length >= 4;
 const articleUrl =
   "https://vnexpress.net/phap-luat/giam-doc-cong-an-tinh-dong-nai-bi-cach-chuc-3981378.html";
 
@@ -30,7 +32,6 @@ const createObj = sentence => ({
   _id: sentence,
   sentence
 });
-
 const crawlArticle = articleUrl =>
   axios(articleUrl)
     .then(res => res.data)
@@ -43,9 +44,23 @@ const crawlArticle = articleUrl =>
         .map(trimIt)
         .map(removeSpecialCharacter)
         .filter(notContainNumberAtLast)
-        .map(createObj);
-      return saveData(result);
+        // .filter(greaterThan4Words)
+        .map(toLowerCase)
+        .map(createObj)
+      console.log('result', result)
+      // return saveData(result);
     });
+// crawlArticle(articleUrl)
+generateTokenForWord('hàng')
+function generateToken(sentence){
+  const last4Words = sentence.split(" ").slice(-4);
+  console.log('last4Words :', last4Words);
+}
+
+
+function generateTokenForWord(word){
+  
+}
 
 function saveData(data) {
   return new Promise((resolve, reject) => {
